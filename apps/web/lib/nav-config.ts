@@ -16,6 +16,8 @@
  *     the URL — e.g. apps/web/app/(domain)/configure/page.tsx serves
  *     at /configure).
  *   - Server-only data; no client JS bundled from this file.
+ *   - Mark operator/admin routes adminOnly: true — TopNav hides them
+ *     from non-admin sessions.
  */
 
 export type NavLink = {
