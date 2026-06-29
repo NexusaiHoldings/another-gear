@@ -1,5 +1,5 @@
-export type NavLink = { label: string; href: string };
-export type NavGroup = { label: string; items: NavLink[] };
+export type NavLink = { label: string; href: string; adminOnly?: boolean };
+export type NavGroup = { label: string; links: NavLink[] };
 export type NavConfig = { primary: NavLink[]; groups: NavGroup[] };
 
 export const NAV_CONFIG: NavConfig = {
@@ -11,7 +11,7 @@ export const NAV_CONFIG: NavConfig = {
   groups: [
     {
       label: "Customer",
-      items: [
+      links: [
         { label: "Shop", href: "/shop" },
         { label: "Stories", href: "/stories" },
         { label: "Orders", href: "/orders" },
@@ -19,7 +19,7 @@ export const NAV_CONFIG: NavConfig = {
     },
     {
       label: "Admin",
-      items: [
+      links: [
         { label: "SKUs", href: "/admin/skus" },
         { label: "Orders", href: "/admin/orders" },
         { label: "Subjects", href: "/admin/subjects" },
