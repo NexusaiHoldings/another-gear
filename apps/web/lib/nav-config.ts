@@ -1,20 +1,25 @@
 export const NAV_CONFIG = {
   primary: [
-    { label: "Shop", href: "/shop" },
-    { label: "Stories", href: "/stories" },
+    { href: "/", label: "Home" },
+    { href: "/shop", label: "Shop" },
+    { href: "/stories", label: "Stories" },
   ],
   groups: [
     {
-      label: "Customer",
-      items: [{ label: "Orders", href: "/orders" }],
+      title: "Customer",
+      items: [
+        { href: "/shop", label: "Shop" },
+        { href: "/stories", label: "Stories" },
+        { href: "/orders", label: "Orders" },
+      ],
     },
     {
-      label: "Admin",
+      title: "Admin",
       items: [
-        { label: "SKUs", href: "/admin/skus" },
-        { label: "Orders", href: "/admin/orders" },
-        { label: "Subjects", href: "/admin/subjects" },
+        { href: "/admin/skus", label: "SKUs" },
+        { href: "/admin/orders", label: "Orders" },
+        { href: "/admin/subjects", label: "Subjects" },
       ],
     },
   ],
-};
+} as const;
