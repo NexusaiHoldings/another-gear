@@ -24,6 +24,7 @@
  */
 
 import type { HandlerContext, HandlerResult } from "@nexus/identity-and-access";
+import { handleSubmitPrintfulOrder } from "./submit_printful_order";
 
 type Args = Record<string, unknown>;
 
@@ -31,5 +32,5 @@ export const DOMAIN_DISPATCH: Record<
   string,
   (ctx: HandlerContext, args: Args) => Promise<HandlerResult>
 > = {
-  // Build agent appends entries here per CTO-declared new_domain_tool.
+  submit_printful_order: (ctx, a) => handleSubmitPrintfulOrder(ctx, a),
 };
