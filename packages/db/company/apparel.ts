@@ -1,6 +1,11 @@
 export const APPAREL_DDL = /* sql */ `
-CREATE TYPE IF NOT EXISTS apparel_sku_type AS ENUM ('tee', 'hoodie', 'tank');
-CREATE TYPE IF NOT EXISTS apparel_consent_status AS ENUM ('pending', 'signed', 'revoked');
+DO $$ BEGIN
+  CREATE TYPE apparel_sku_type AS ENUM ('tee', 'hoodie', 'tank');
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  CREATE TYPE apparel_consent_status AS ENUM ('pending', 'signed', 'revoked');
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 CREATE TABLE IF NOT EXISTS apparel_skus (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
