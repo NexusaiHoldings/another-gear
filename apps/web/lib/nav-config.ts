@@ -1,38 +1,35 @@
-export interface NavItem {
-  label: string;
+export type NavLink = {
   href: string;
-}
-
-export interface NavGroup {
   label: string;
-  items: NavItem[];
-}
+};
 
-export interface NavConfig {
-  primary: NavItem[];
+export type NavGroup = {
+  label: string;
+  links: NavLink[];
+};
+
+export type NavConfig = {
+  primary: NavLink[];
   groups: NavGroup[];
-}
+};
 
 export const NAV_CONFIG: NavConfig = {
   primary: [
-    { label: "Shop", href: "/shop" },
-    { label: "Stories", href: "/stories" },
+    { href: "/", label: "Home" },
+    { href: "/shop", label: "Shop" },
+    { href: "/stories", label: "Stories" },
   ],
   groups: [
     {
       label: "Customer",
-      items: [
-        { label: "Shop", href: "/shop" },
-        { label: "Stories", href: "/stories" },
-        { label: "Orders", href: "/orders" },
-      ],
+      links: [{ href: "/orders", label: "Orders" }],
     },
     {
       label: "Admin",
-      items: [
-        { label: "SKUs", href: "/admin/skus" },
-        { label: "Orders", href: "/admin/orders" },
-        { label: "Subjects", href: "/admin/subjects" },
+      links: [
+        { href: "/admin/skus", label: "SKUs" },
+        { href: "/admin/orders", label: "Orders" },
+        { href: "/admin/subjects", label: "Subjects" },
       ],
     },
   ],
