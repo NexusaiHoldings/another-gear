@@ -1,25 +1,46 @@
-export const NAV_CONFIG = {
+export type NavLink = {
+  title: string;
+  href: string;
+  external?: boolean;
+};
+
+export type NavGroup = {
+  title: string;
+  links: NavLink[];
+};
+
+export type NavConfig = {
+  primary: NavLink[];
+  groups: NavGroup[];
+};
+
+export const NAV_CONFIG: NavConfig = {
   primary: [
-    { href: "/", label: "Home" },
-    { href: "/shop", label: "Shop" },
-    { href: "/stories", label: "Stories" },
+    { title: "Conversation", href: "/conversation" },
+    { title: "Work", href: "/work" },
+    { title: "Artifacts", href: "/artifact" },
+    { title: "Approvals", href: "/approval" },
+    { title: "Direct", href: "/direct" },
+    { title: "Shop", href: "/shop" },
   ],
   groups: [
     {
       title: "Customer",
-      items: [
-        { href: "/shop", label: "Shop" },
-        { href: "/stories", label: "Stories" },
-        { href: "/orders", label: "Orders" },
+      links: [
+        { title: "Shop", href: "/shop" },
+        { title: "Stories", href: "/stories" },
+        { title: "Orders", href: "/orders" },
       ],
     },
     {
       title: "Admin",
-      items: [
-        { href: "/admin/skus", label: "SKUs" },
-        { href: "/admin/orders", label: "Orders" },
-        { href: "/admin/subjects", label: "Subjects" },
+      links: [
+        { title: "SKUs", href: "/admin/skus" },
+        { title: "Orders", href: "/admin/orders" },
+        { title: "Subjects", href: "/admin/subjects" },
       ],
     },
   ],
-} as const;
+};
+
+export default NAV_CONFIG;
