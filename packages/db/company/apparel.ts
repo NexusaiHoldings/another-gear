@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS apparel_skus (
     slug TEXT NOT NULL UNIQUE,
     sku_type apparel_sku_type NOT NULL,
     retail_price_cents INTEGER NOT NULL CHECK (retail_price_cents >= 0),
-    printful_product_id TEXT NOT NULL,
+    printful_product_id TEXT,
     printful_variant_ids JSONB NOT NULL DEFAULT '[]'::jsonb,
     fiber_content_label TEXT NOT NULL,
     country_of_origin TEXT NOT NULL,
