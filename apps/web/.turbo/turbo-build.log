@@ -1,0 +1,34 @@
+
+> web@0.1.0 build
+> next build
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./components/topnav.tsx:29:17
+Type error: Property 'adminOnly' does not exist on type 'NavLink'.
+
+[0m [90m 27 |[39m[0m
+[0m [90m 28 |[39m [36mfunction[39m _isAdminNav(link[33m:[39m [33mNavLink[39m)[33m:[39m boolean {[0m
+[0m[31m[1m>[22m[39m[90m 29 |[39m   [36mreturn[39m [33m![39m[33m![39mlink[33m.[39madminOnly [33m||[39m [33mADMIN_ONLY_PATHS[39m[33m.[39mhas(link[33m.[39mhref)[33m;[39m[0m
+[0m [90m    |[39m                 [31m[1m^[22m[39m[0m
+[0m [90m 30 |[39m }[0m
+[0m [90m 31 |[39m[0m
+[0m [90m 32 |[39m [36mexport[39m [36masync[39m [36mfunction[39m [33mTopNav[39m()[33m:[39m [33mPromise[39m[33m<[39m[33mJSX[39m[33m.[39m[33mElement[39m[33m>[39m {[0m
+Next.js build worker exited with code: 1 and signal: null
+npm error Lifecycle script `build` failed with error:
+npm error code 1
+npm error path /nexus-worktrees/agent-9a65b3bc/apps/web
+npm error workspace web@0.1.0
+npm error location /nexus-worktrees/agent-9a65b3bc/apps/web
+npm error command failed
+npm error command sh -c next build

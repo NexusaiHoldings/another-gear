@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "middleware": {},
+  "functions": {
+    "/api/health/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/edge-chunks/53.js",
+        "server/app/api/health/route.js"
+      ],
+      "name": "app/api/health/route",
+      "page": "/api/health/route",
+      "matchers": [
+        {
+          "regexp": "^/api/health$",
+          "originalSource": "/api/health"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "mpm1sbLSYrXzt-m8kdtDV",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "eOLbstSEti3AT2SqRREV2+Osh4VKRKQPaYpWEwgRNyo=",
+        "__NEXT_PREVIEW_MODE_ID": "25aad9074d962575f3c24dd877b178cf",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "6f63bdd3a19066059bfa4078ab2030f0adf514a33a0654854fbc72bb42cb36c7",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "baa25356da9d8effff76ae9a7fc81fd41975073fe0788424433d3e7699a6d6f6"
+      }
+    },
+    "/api/runtime/threads/[threadId]/stream/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/edge-chunks/53.js",
+        "server/app/api/runtime/threads/[threadId]/stream/route.js"
+      ],
+      "name": "app/api/runtime/threads/[threadId]/stream/route",
+      "page": "/api/runtime/threads/[threadId]/stream/route",
+      "matchers": [
+        {
+          "regexp": "^/api/runtime/threads/(?<threadId>[^/]+?)/stream$",
+          "originalSource": "/api/runtime/threads/[threadId]/stream"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "mpm1sbLSYrXzt-m8kdtDV",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "eOLbstSEti3AT2SqRREV2+Osh4VKRKQPaYpWEwgRNyo=",
+        "__NEXT_PREVIEW_MODE_ID": "25aad9074d962575f3c24dd877b178cf",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "6f63bdd3a19066059bfa4078ab2030f0adf514a33a0654854fbc72bb42cb36c7",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "baa25356da9d8effff76ae9a7fc81fd41975073fe0788424433d3e7699a6d6f6"
+      }
+    }
+  },
+  "sortedMiddleware": []
+}
