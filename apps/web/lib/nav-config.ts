@@ -1,4 +1,8 @@
-export const NAV_CONFIG = {
+export type NavLink = { label: string; href: string };
+export type NavGroup = { label: string; items: NavLink[] };
+export type NavConfig = { primary: NavLink[]; groups: NavGroup[] };
+
+export const NAV_CONFIG: NavConfig = {
   primary: [
     { label: "Shop", href: "/shop" },
     { label: "Stories", href: "/stories" },
