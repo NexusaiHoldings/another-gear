@@ -33,6 +33,8 @@
     "@nexus/developer-surface": "*",
     "@nexus/social-and-engagement": "*",
     "@nexus/feedback": "*",
+    "@nexus/search": "*",
+    "@nexus/analytics-and-telemetry": "*",
     "@nexus-substrate/runtime-client": "*"
   }
 }
