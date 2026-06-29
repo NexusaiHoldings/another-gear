@@ -74,4 +74,28 @@ EXCEPTION
   WHEN duplicate_object THEN NULL;
 END
 $$;
+
+CREATE TABLE IF NOT EXISTS apparel_orders (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  printful_order_id TEXT NOT NULL UNIQUE,
+  customer_user_id UUID,
+  customer_email TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'Processing',
+  tracking_number TEXT,
+  tracking_url TEXT,
+  estimated_delivery_date DATE,
+  raw_payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now())
+);
+
+CREATE TABLE IF NOT EXISTS apparel_order_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  order_id UUID NOT NULL REFERENCES apparel_orders(id) ON DELETE CASCADE,
+  event_type TEXT NOT NULL,
+  printful_status TEXT,
+  customer_status TEXT NOT NULL,
+  raw_payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+  occurred_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now())
+);
 `;
