@@ -63,6 +63,26 @@ export const LEGOS: readonly LegoConfig[] = [
   },
   {
     "config": {
+      "tier_ladder": [
+        {
+          "name": "Core Tee / Tank",
+          "price_id": "price_1Tn7vS6WMeYkDDIuN5YUVUAX",
+          "amount": 4000,
+          "interval": "month"
+        },
+        {
+          "name": "Premium Hoodie",
+          "price_id": "price_1Tn7vS6WMeYkDDIuPfQondA6",
+          "amount": 8500,
+          "interval": "month"
+        },
+        {
+          "name": "Limited Drop / Bundle",
+          "price_id": "price_1Tn7vS6WMeYkDDIujmwlbWhm",
+          "amount": 12000,
+          "interval": "month"
+        }
+      ],
       "default_currency": "usd",
       "enable_proration": true,
       "trial_days": 0
